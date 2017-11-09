@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+<form action ="#" th:action="@{/process}" th:object="${pet}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+
+Age: <input type="text" th:field="*{age}"/>
+    <span th:if="${#fields.hasErrors('age')}"></span><br/>
+
+
+    Type: <input type="text" th:field="*{type}"/>
+    <span th:if="${#fields.hasErrors('type')}"></span><br/>
+
+    Breed: <input type="text" th:field="*{breed}"/>
+    <span th:if="${#fields.hasErrors('breed')}"></span><br/>
+
+    Color: <input type="text" th:field="*{color}"/>
+    <span th:if="${#fields.hasErrors('color')}"></span><br/>
+
+
+    Features: <input type="text" th:field="*{features}"/>
+    <span th:if="${#fields.hasErrors('features')}"></span><br/>
+
+    Owner's contact number: <input type="text" th:field="*{contactnum}"/>
+    <span th:if="${#fields.hasErrors('contactnum')}"></span><br/>
+
+    Status: <input type="text" th:field="*{status}"/>
+    <span th:if="${#fields.hasErrors('status')}"></span><br/>
+
+    <input type="submit" value="Submit"/>
+</form>
+</body>
+</html>

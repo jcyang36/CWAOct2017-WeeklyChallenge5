@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<a href="/">Show All Pets</a><br/>
+Age: <span th:text="${pet.age}"></span><br/>
+Type: <span th:text="${pet.type}"></span><br/>
+Breed: <span th:text="${pet.breed}"></span><br/>
+Color: <span th:text="${pet.color}"></span><br/>
+Features: <span th:text="${pet.features}"></span><br/>
+Contact Number: <span th:text="${pet.contactnum}"></span><br/>
+Status: <span th:text="${pet.status}"></span><br/>
+<a th:href="@{/delete/{id}(id=${pet.id})}">Delete this pet</a>
+
+</body>
+</html>
