@@ -1,0 +1,60 @@
+
+
+/* --- Style --- */
+.navbar-brand{
+
+    font-family: 'Inconsolata', monospace;
+
+}
+
+.well{font-weight:bold;}
+
+.navbar-custom {
+    background-color:#e67e22;
+    color:#e67e22;
+    border-radius:0;
+}
+
+.navbar-custom .navbar-nav > li > a {
+    color:#ecf0f1;
+}
+
+.navbar-custom .navbar-nav > .active > a {
+    color: #ffe6d1;
+    background-color:#d35400;
+}
+
+.navbar-custom .navbar-nav > li > a:hover,
+.navbar-custom .navbar-nav > li > a:focus,
+.navbar-custom .navbar-nav > .active > a:hover,
+.navbar-custom .navbar-nav > .active > a:focus,
+.navbar-custom .navbar-nav > .open >a {
+    text-decoration: none;
+    background-color: burlywood;
+}
+
+.navbar-custom .navbar-brand {
+    color:#d35400;
+}
+.navbar-custom .navbar-toggle {
+    background-color:#ecf0f1;
+}
+.navbar-custom .icon-bar {
+    background-color:#ecf0f1;
+}
+
+
+h2{
+    text-align:center;
+    color:darkblue;
+}
+
+.home{
+    background:url(whitedog.jpeg)no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;}
+
+td{width:10%;}

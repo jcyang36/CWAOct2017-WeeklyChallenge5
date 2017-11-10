@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" />
-    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
+
+    <link rel ="stylesheet" href = "css/style.css"/>
 </head>
 <body>
+
+<nav class="navbar navbar-custom">
+    <div class ="container-fluid">
+        <div class="navbar-header">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <a class="navbar-brand">PetFinder</a>
+            </div>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/add">Add</a></li>
+            <li><a href="/list">Show</a></li>
+        </ul>
+    </div>
+
+</nav>
+<div class="container">
+
+    <h2>Add a Pet</h2>
 <form action ="#" th:action="@{/process}" th:object="${pet}" method="post">
     <input type="hidden" th:field="*{id}"/>
 
@@ -28,10 +51,12 @@ Age: <input type="text" th:field="*{age}"/>
     Owner's contact number: <input type="text" th:field="*{contactnum}"/>
     <span th:if="${#fields.hasErrors('contactnum')}"></span><br/>
 
-    Status: <input type="text" th:field="*{status}"/>
-    <span th:if="${#fields.hasErrors('status')}"></span><br/>
+    Status:  Lost <input type="radio" th:field="*{status}" name="group" value="lost"  />
+    Found <input type="radio" th:field="*{status}" name = "group" value="found" />
+    <br/>
 
     <input type="submit" value="Submit"/>
 </form>
+</div>
 </body>
 </html>

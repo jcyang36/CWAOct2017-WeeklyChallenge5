@@ -1,11 +1,34 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
-    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
+
+    <link rel ="stylesheet" href = "css/style.css"/>
 </head>
 <body>
-<a href="/">Show All Pets</a><br/>
+
+
+
+<nav class="navbar navbar-custom">
+    <div class ="container-fluid">
+        <div class="navbar-header">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <a class="navbar-brand">PetFinder</a>
+            </div>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/add">Add</a></li>
+            <li><a href="/list">Show</a></li>
+        </ul>
+    </div>
+
+</nav><div class="container">
+<h2>Pet Details</h2>
+    <a href="/">Show All Pets</a><br/>
 Age: <span th:text="${pet.age}"></span><br/>
 Type: <span th:text="${pet.type}"></span><br/>
 Breed: <span th:text="${pet.breed}"></span><br/>
@@ -14,6 +37,6 @@ Features: <span th:text="${pet.features}"></span><br/>
 Contact Number: <span th:text="${pet.contactnum}"></span><br/>
 Status: <span th:text="${pet.status}"></span><br/>
 <a th:href="@{/delete/{id}(id=${pet.id})}">Delete this pet</a>
-
+</div>
 </body>
 </html>

@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="www.thymeleaf.org">
+<html lang="en">
 <head>
-
+    <meta charset="UTF-8"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
 
     <link rel ="stylesheet" href = "css/style.css"/>
-
+    <title>PetFinder</title>
 </head>
-<body>
-
-
+<body class="home">
+<!--navbar for home page-->
 <nav class="navbar navbar-custom">
     <div class ="container-fluid">
         <div class="navbar-header">
@@ -30,36 +29,7 @@
 </nav>
 
 <div class="container">
-    <h2>List of Pets</h2>
-<a href="/add">Add a Pet</a><br/>
-<table>
-
-    <tr>
-        <th>Age</th>
-        <th>Type</th>
-        <th>Breed</th>
-        <th>Color</th>
-        <th>Features</th>
-        <th>Contact Number</th>
-        <th>Status</th>
-        <th>Actions</th>
-    </tr>
-    <tr th:each="pet:${pets}">
-        <td th:text="${pet.age}"></td>
-        <td th:text="${pet.type}"></td>
-        <td th:text="${pet.breed}"></td>
-        <td th:text="${pet.color}"></td>
-        <td th:text="${pet.features}"></td>
-        <td th:text="${pet.contactnum}"></td>
-        <td th:text="${pet.status}"></td>
-         <td>
-             <a th:href="@{/update/{id}(id=${pet.id})}">Update </a> -
-             <a th:href="@{/detail/{id}(id=${pet.id})}">Details</a> -
-             <a th:href="@{/delete/{id}(id=${pet.id})}">Delete</a>
-
-         </td>
-    </tr>
-</table>
+<h2>Lost Pets</h2>
 </div>
 </body>
 </html>

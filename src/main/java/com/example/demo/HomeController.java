@@ -17,14 +17,29 @@ public class HomeController {
     PetRepository petRepository;
 
     @RequestMapping("/")
+    public String showDefault(Model model){
+        model.addAttribute("pets", petRepository.findAll());
+    return "home";
+    }
+
+    @RequestMapping("/list")
     public String listPets(Model model){
         model.addAttribute("pets", petRepository.findAll());
-    return "list";
+        return "list";
+    }
+
+    @RequestMapping("/home")
+    public String showHome(Model model){
+        model.addAttribute("pets", petRepository.findAll());
+        return "home";
     }
 
     @GetMapping("/add")
     public String petForm(Model model){
-        model.addAttribute("pet", new Pet());
+        Pet pet = new Pet();
+        pet.setStatus("lost");
+        model.addAttribute("pet", pet);
+
         return "petform";
     }
 
@@ -36,7 +51,7 @@ public class HomeController {
             return "petform";
         }
         petRepository.save(pet);
-        return "redirect:/";
+        return "redirect:/list";
     }
     @RequestMapping("/detail/{id}")
     public String showCourse(@PathVariable("id") long id, Model model){
@@ -46,7 +61,7 @@ public class HomeController {
     @RequestMapping("/update/{id}")
     public String updateCourse(@PathVariable("id") long id, Model model){
         model.addAttribute("pet", petRepository.findOne(id));
-        return "courseform";
+        return "petform";
     }
     @RequestMapping("/delete/{id}")
     public String delCourse(@PathVariable("id") long id){
